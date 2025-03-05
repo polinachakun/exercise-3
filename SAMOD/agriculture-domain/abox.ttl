@@ -1,4 +1,4 @@
-@prefix ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-danai#> .
+@prefix ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-alessandro#> .
 @prefix was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#> .
 @prefix hmas: <https://purl.org/hmas/> .
 @prefix td: <https://www.w3.org/2019/wot/td#> .
