@@ -1,0 +1,11 @@
+PREFIX ex: <http://localhost:7200/repositories/polina>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+
+SELECT ?x1 ?y1 ?x2 ?y2
+WHERE {
+  ex:section1 was:hasCoordinates ?coords .
+  ?coords was:x1 ?x1 ;
+          was:y1 ?y1 ;
+          was:x2 ?x2 ;
+          was:y2 ?y2 .
+}

@@ -1,0 +1,46 @@
+PREFIX ex: <http://localhost:7200/repositories/polina>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT {
+  GRAPH <http://localhost:7200/repositories/polina> {
+    # Wheat 
+    ex:crop1 a was:Crop, was:Wheat .
+    
+    _:moisture1 a was:SoilMoisture ;
+      was:moistureValue "120"^^xsd:int .
+    
+    ex:crop1 was:hasRequiredMoisture _:moisture1 .
+    ex:section1 was:hasCrop ex:crop1 .
+    
+    ex:crop2 a was:Crop, was:Wheat .
+    
+    _:moisture2 a was:SoilMoisture ;
+      was:moistureValue "120"^^xsd:int .
+    
+    ex:crop2 was:hasRequiredMoisture _:moisture2 .
+    ex:section2 was:hasCrop ex:crop2 .
+    
+    # Corn 
+    ex:crop3 a was:Crop, was:Corn .
+    
+    _:moisture3 a was:SoilMoisture ;
+      was:moistureValue "80"^^xsd:int .
+    
+    ex:crop3 was:hasRequiredMoisture _:moisture3 .
+    ex:section3 was:hasCrop ex:crop3 .
+    
+    ex:crop4 a was:Crop, was:Corn .
+    
+    _:moisture4 a was:SoilMoisture ;
+      was:moistureValue "80"^^xsd:int .
+    
+    ex:crop4 was:hasRequiredMoisture _:moisture4 .
+    ex:section4 was:hasCrop ex:crop4 .
+  }
+} WHERE {
+  ex:section1 a was:LandSection .
+  ex:section2 a was:LandSection .
+  ex:section3 a was:LandSection .
+  ex:section4 a was:LandSection .
+}

@@ -1,0 +1,8 @@
+PREFIX ex: <http://localhost:7200/repositories/polina>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+
+SELECT ?crop
+WHERE {
+  ex:section1 was:hasCrop ?crop .
+  ?crop a was:Crop .
+}

@@ -1,7 +1,7 @@
 // moisture_detector agent
 
 // Add your graph repo location below
-repo_location("https://sandbox-graphdb.interactions.ics.unisg.ch/repositories/was-exercise-3-danai").
+repo_location("http://localhost:7200/repositories/polina").
 
 !start.
 
@@ -49,7 +49,7 @@ repo_location("https://sandbox-graphdb.interactions.ics.unisg.ch/repositories/wa
     queryRequiredMoisture(Crop, RequiredMoistureLevel);
     .print("Queried required moisture level of crop: ", RequiredMoistureLevel);
 
-    !check_moisture_sufficiency(Coordinates, RequireMoistureLevel, CurrentMoistureLevel);
+    !check_moisture_sufficiency(Coordinates, RequiredMoistureLevel, CurrentMoistureLevel);
 
     !monitor_section(RemainingSections).
 

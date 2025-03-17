@@ -1,0 +1,30 @@
+PREFIX ex: <http://localhost:7200/repositories/polina>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX hmas: <https://purl.org/hmas/>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+
+INSERT {
+  GRAPH <http://localhost:7200/repositories/polina> {
+    # Monitoring agent
+    ex:monitoringAgent a was:MonitorsMoistureAgent ;
+      was:operatesOn ?tractor1 .
+    
+    # Irrigation agent
+    ex:irrigationAgent a was:IrrigatesAgent ;
+      was:operatesOn ?tractor2 .
+    
+    # Associate tractors with agents
+    ?tractor1 was:hasAgent ex:monitoringAgent .
+    ?tractor2 was:hasAgent ex:irrigationAgent .
+  }
+} WHERE {
+  ?farm a was:Farm .
+  ?farm hmas:contains ?tractor1, ?tractor2 .
+  ?tractor1 a was:Tractor .
+  ?tractor2 a was:Tractor .
+  ?tractor1 td:hasActionAffordance ?aff1 .
+  ?tractor2 td:hasActionAffordance ?aff2 .
+  ?aff1 a was:ReadSoilMoistureAffordance .
+  ?aff2 a was:IrrigateAffordance .
+  FILTER(?tractor1 != ?tractor2)
+}

@@ -1,0 +1,8 @@
+PREFIX ex: <http://localhost:7200/repositories/polina>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+
+SELECT ?moisture
+WHERE {
+  ex:crop1 was:hasRequiredMoisture ?moistureObj .
+  ?moistureObj was:moistureValue ?moisture .
+}
