@@ -4,7 +4,7 @@ PREFIX hmas: <https://purl.org/hmas/>
 PREFIX td: <https://www.w3.org/2019/wot/td#>
 
 INSERT {
-  GRAPH <http://localhost:7200/repositories/polina> {
+  GRAPH <http://localhost:7200/repositories/polina#> {
     # Monitoring agent
     ex:monitoringAgent a was:MonitorsMoistureAgent ;
       was:operatesOn ?tractor1 .

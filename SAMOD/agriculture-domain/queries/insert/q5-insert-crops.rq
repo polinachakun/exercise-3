@@ -3,7 +3,7 @@ PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 INSERT {
-  GRAPH <http://localhost:7200/repositories/polina> {
+  GRAPH <http://localhost:7200/repositories/polina#> {
     # Wheat 
     ex:crop1 a was:Crop, was:Wheat .
     

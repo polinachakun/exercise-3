@@ -1,3 +1,4 @@
+PREFIX ex: <http://localhost:7200/repositories/polina>
 PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
 PREFIX hmas: <https://purl.org/hmas/>
 PREFIX td: <https://www.w3.org/2019/wot/td#>
@@ -59,6 +60,6 @@ INSERT {
     }.
 } WHERE {
 	?farm a was:Farm.
-  	BIND(IRI(CONCAT("https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-danai#tractor-", strUUID())) AS ?newTractor1)
-  	BIND(IRI(CONCAT("https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-danai#tractor-", strUUID())) AS ?newTractor2)
+  	BIND(IRI(CONCAT("http://localhost:7200/repositories/polina#tractor-", strUUID())) AS ?newTractor1)
+  	BIND(IRI(CONCAT("http://localhost:7200/repositories/polina#tractor-", strUUID())) AS ?newTractor2)
 }

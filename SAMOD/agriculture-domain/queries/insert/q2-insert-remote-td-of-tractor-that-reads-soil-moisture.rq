@@ -1,3 +1,4 @@
+PREFIX ex: <http://localhost:7200/repositories/polina>
 PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
 PREFIX hmas: <https://purl.org/hmas/>
 PREFIX td: <https://www.w3.org/2019/wot/td#>
